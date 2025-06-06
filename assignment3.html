@@ -1,0 +1,113 @@
+<!-- 5th June  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development</title>
+    <style>
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 350px;
+            height: 240px;
+            margin: 20px auto;
+            text-align: center;
+            background-color: beige;
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 3px 3px 5px 0px rgb(201, 201, 187);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .name,
+        .password {
+            width: 340px;
+            height: 30px;
+            margin: 10px;
+            border-radius: 4px;
+        }
+
+        .login {
+            width: 340px;
+            background-color: blue;
+            color: white;
+            padding: 8px;
+            margin: 10px 0px;
+            border-radius: 4px;
+            border: none;
+            font-size: large;
+            font-weight: bolder;
+        }
+
+        .login:hover {
+            background-color: rgb(12, 12, 188);
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            height: 30px;
+        }
+
+        .input-group img {
+            width: 28px;
+            height: 34px;
+            background-color: #d5d5ae;
+            border: 1.5px solid black;
+            border-right: none;
+        }
+
+        .input-group input {
+            outline: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .boxes {
+            display: flex;
+            gap: 120px;
+        }
+
+        .fp {
+            justify-self: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <h1><i>Instagram</i></h1>
+            <div class="input-group">
+                <img src="username.png" alt="User Icon">
+                <input type="text" placeholder="Username" id="username" required>
+            </div>
+
+            <div class="input-group">
+                <img src="password.png" alt="Password Icon">
+                <input type="password" placeholder="Password" id="password" required>
+            </div>
+            <button class="login">Log in</button>
+            <div class="boxes">
+                <div><input type="checkbox">Remember me</div>
+                <a href="#" class="fp">Forgot Password?</a>
+            </div>
+        </div>
+        <div class="box">Don't have an account! <a href="#">Sign up here.</a></div>
+    </div>
+</body>
+
+</html>

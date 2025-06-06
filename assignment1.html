@@ -1,0 +1,65 @@
+<!-- 5th June  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development</title>
+    <style>
+        .container {
+            max-width: 605px;
+            margin: auto;
+            text-align: center;
+        }
+
+        form {
+            font-size: large;
+            margin: 20px;
+        }
+
+        .box {
+            width: 600px;
+            height: 28px;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Mobile Number Validation using JavaScript</h1>
+        <form name="myforms" onsubmit="return validateForm()">
+            <label for="number">Enter Mobile Number</label>
+            <input type="text" name="pno" id="number" placeholder="Enter 10 Digit Mobile Num">
+            <div class="box"></div>
+            <button type="submit">Validate</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var valid = true;
+            const emailPattern = /[^0-9]/;
+            if ((document.myforms.pno.value.length < 9 || document.myforms.pno.value.length > 11) && (!emailPattern.test(document.myforms.pno.value))) {
+                let num = document.myforms.pno.value.length;
+                document.querySelector(".box").textContent = "Enter number is of length " + num + ". Enter valid number of 10 digits";
+                valid=false;
+            }
+            else if(emailPattern.test(document.myforms.pno.value))
+            {
+                document.querySelector(".box").textContent = "Enter number has variables other than numbers. Enter valid number";
+                valid=false;
+            }
+            else 
+            {
+                document.querySelector(".box").textContent = "Entered number is correct";
+                valid=true;
+            }
+            return valid;
+        }
+    </script>
+</body>
+
+</html>
