@@ -1,0 +1,153 @@
+<!-- 5th June  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development</title>
+    <style>
+        * {
+            background-color: rgb(165, 18, 165);
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: auto;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .box1 {
+            width: 360px;
+            height: 35px;
+            background-color: white;
+            border-radius: 5px;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            gap: 30px;
+            box-shadow: 4px 4px 4px black;
+        }
+
+        input {
+            background-color: #f9c8ff;
+            border: none;
+            height: -webkit-fill-available;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: large;
+        }
+
+        .first {
+            background-color: white;
+        }
+
+        .second {
+            background-color: purple;
+            color: white;
+            padding: 8px;
+            width: 107px;
+            border-radius: 6px;
+            border: none;
+            font-size: large;
+        }
+
+        .second:hover {
+            background-color: rgb(74, 8, 74);
+        }
+
+        .container2 {
+            display: flex;
+            margin: 30px;
+            justify-content: space-between;
+        }
+
+        .box {
+            width: 70px;
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 4px 4px 4px black;
+            background-color: white;
+            gap: 8px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .num,
+        .text {
+            background-color: white;
+        }
+
+        .num
+        {
+            font-weight: bolder;
+            font-size: x-large;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>AGE CALCULATOR</h1>
+        <div class="box1">
+            <div class="first"><input id="input" type="date"></div>
+            <button class="second" onclick="calculate()">Calculator</button>
+        </div>
+        <div class="container2">
+            <div class="box2 box">
+                <div id="num1" class="num">00</div>
+                <div class="text">YEAR</div>
+            </div>
+            <div class="box2 box">
+                <div id="num2" class="num">11</div>
+                <div class="text">MONTH</div>
+            </div>
+            <div class="box2 box">
+                <div id="num3" class="num">00</div>
+                <div class="text">DAY</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculate()
+        {
+            var complete=new Date();
+            var cdate=complete.getDate();
+            var cmonth=complete.getMonth()+1;
+            var cyear=complete.getFullYear();
+            let given=document.getElementById("input").value;
+            let dates=new Date(given);
+            let gdate=dates.getDate();
+            let gmonth=dates.getMonth()+1;
+            let gyear=dates.getFullYear();
+            let ddate=cdate-gdate;
+            let dmonth=cmonth-gmonth;
+            let dyear=cyear-gyear;
+            if(ddate<0)
+            {
+                dmonth-=1;
+                ddate+=new Date(complete.getFullYear(),complete.getMonth(),0).getDate();
+            }
+            if(dmonth<0)
+            {
+                dyear-=1;
+                dmonth+=12;
+            }
+            document.getElementById("num1").textContent=dyear;
+            document.getElementById("num2").textContent=dmonth;
+            document.getElementById("num3").textContent=ddate;           
+        }
+    </script>
+</body>
+
+</html>
